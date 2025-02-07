@@ -142,3 +142,60 @@ it('T10 - When a list of non-special products with unit price greater than 1000,
   const expectedResult = 204;
   expect(actualResult).toBe(expectedResult);
 });
+
+it('T11 - When a list of products with special id PROMO-LOJINHA with unit price less or equal than 499.99, then the discount is 20%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "Playstation 4",
+      unitPrice: 400,
+      quantity: 1,
+    },
+    {
+      uniqueId: "2",
+      productName: "Controller",
+      unitPrice: 60,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 92;
+  expect(actualResult).toBe(expectedResult);
+});
+
+it('T12 - When a list of products with special id PROMO-LOJINHA with unit price between than 500 and 999.99, then the discount is 20%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "Xbox Series S",
+      unitPrice: 550,
+      quantity: 1,
+    },
+    {
+      uniqueId: "2",
+      productName: "Controller",
+      unitPrice: 60,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 122;
+  expect(actualResult).toBe(expectedResult);
+});
+
+it('T13 - When a list of products with special id PROMO-LOJINHA with unit price greater than 1000, then the discount is 20%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "iPhone 15",
+      unitPrice: 1200,
+      quantity: 1,
+    },
+    {
+      uniqueId: "2",
+      productName: "AirPods",
+      unitPrice: 200,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 280;
+  expect(actualResult).toBe(expectedResult);
+});
