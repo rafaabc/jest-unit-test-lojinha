@@ -48,15 +48,40 @@ it('T4 - When one non-special item with unit price greater than 1000, then the d
 });
 
 it('T5 - When one product with special id PROMO-LOJINHA with unit price less or equal than 499.99, then the discount is 20%"', () => {
-    const actualResult = calculateDiscount([
-        {
-        uniqueId: "PROMO-LOJINHA",
-        productName: "Playstation 4",
-        unitPrice: 100,
-        quantity: 1,
-        },
-    ]);
-    const expectedResult = 20;
-    expect(actualResult).toBe(expectedResult);
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "Playstation 4",
+      unitPrice: 100,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 20;
+  expect(actualResult).toBe(expectedResult);
 });
 
+it('T6 - When one product with special id PROMO-LOJINHA with unit price between than 500 and 999.99, then the discount is 20%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "Xbox Series S",
+      unitPrice: 550,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 110;
+  expect(actualResult).toBe(expectedResult);
+});
+
+it('T7 - When one product with special id PROMO-LOJINHA with unit price greater than 1000, then the discount is 20%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "PROMO-LOJINHA",
+      productName: "iPhone 15",
+      unitPrice: 1200,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 240;
+  expect(actualResult).toBe(expectedResult);
+});
