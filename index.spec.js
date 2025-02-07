@@ -104,3 +104,41 @@ it('T8 - When a list of non-special products with unit price less or equal than 
   const expectedResult = 4;
   expect(actualResult).toBe(expectedResult);
 });
+
+it('T9 - When a list of non-special products with unit price between than 500 and 999.99, then the discount is 10%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "1",
+      productName: "Monitor",
+      unitPrice: 600,
+      quantity: 1,
+    },
+    {
+      uniqueId: "2",
+      productName: "Mouse",
+      unitPrice: 40,
+      quantity: 2,
+    },
+  ]);
+  const expectedResult = 68;
+  expect(actualResult).toBe(expectedResult);
+});
+
+it('T10 - When a list of non-special products with unit price greater than 1000, then the discount is 15%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "1",
+      productName: "Samsung Galaxy S20",
+      unitPrice: 650,
+      quantity: 2,
+    },
+    {
+      uniqueId: "2",
+      productName: "Energy cable",
+      unitPrice: 60,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 204;
+  expect(actualResult).toBe(expectedResult);
+});
