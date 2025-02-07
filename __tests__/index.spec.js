@@ -1,4 +1,4 @@
-const calculateDiscount = require("./index");
+const calculateDiscount = require("../src/index");
 
 it("T1 - When there is no product, then the discount is 0", () => {
   const actualResult = calculateDiscount([]);
