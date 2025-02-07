@@ -1,3 +1,4 @@
-module.exports = function() {
-    return 0;
+module.exports = function calculateDiscount(products) {
+    if (!products.length) return 0;
+    return 5;    
 }

@@ -7,7 +7,7 @@ it("T1 - When there is no product, then the discount is 0", () => {
   expect(actualResult).toBe(expectedResult);
 });
 
-it('T2 - When the list of products has one non-special item with value less or equal than 499.99, then the discount is 5%"', () => {
+it('T2 - When one non-special item with value less or equal than 499.99, then the discount is 5%"', () => {
   const actualResult = calculateDiscount([
     {
       uniqueId: "1",
