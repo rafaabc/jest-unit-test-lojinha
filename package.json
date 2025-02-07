@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "jest": "^29.7.0"
-  }
+  },
+  "name": "jest-unit-test-lojinha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.spec.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaabc/jest-unit-test-lojinha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaabc/jest-unit-test-lojinha/issues"
+  },
+  "homepage": "https://github.com/rafaabc/jest-unit-test-lojinha#readme"
 }
