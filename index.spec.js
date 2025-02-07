@@ -85,3 +85,22 @@ it('T7 - When one product with special id PROMO-LOJINHA with unit price greater 
   const expectedResult = 240;
   expect(actualResult).toBe(expectedResult);
 });
+
+it('T8 - When a list of non-special products with unit price less or equal than 499.99, then the discount is 5%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "1",
+      productName: "Keyboard",
+      unitPrice: 50,
+      quantity: 1,
+    },
+    {
+      uniqueId: "2",
+      productName: "Energy cable",
+      unitPrice: 30,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 4;
+  expect(actualResult).toBe(expectedResult);
+});
