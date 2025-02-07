@@ -20,3 +20,16 @@ it('T2 - When one non-special item with value less or equal than 499.99, then th
 
   expect(actualResult).toBe(expectedResult);
 });
+
+it('T3 - When one non-special item with value between than 500 and 999.99, then the discount is 10%"', () => {
+  const actualResult = calculateDiscount([
+    {
+      uniqueId: "1",
+      productName: "Xbox Series X",
+      unitPrice: 600,
+      quantity: 1,
+    },
+  ]);
+  const expectedResult = 60;
+  expect(actualResult).toBe(expectedResult);
+});
